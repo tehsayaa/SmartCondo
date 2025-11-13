@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smart Condo - Resident Portal Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#4A90E2",
+            "background-light": "#F9F9F9",
+            "background-dark": "#101922",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    input[type="radio"]:checked {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<main class="flex-1">
+<div class="flex flex-1 justify-center py-8 px-4 sm:px-6 md:py-12 lg:px-8">
+<div class="layout-content-container flex flex-col w-full max-w-4xl flex-1 gap-8">
+<!-- Step 1: Unit Selection -->
+<section class="flex flex-col gap-6">
+<!-- Page Heading -->
+<div class="flex flex-col gap-2 text-center">
+<p class="text-3xl font-black text-[#333333] dark:text-white tracking-tight sm:text-4xl">Welcome to Your Smart Condo Portal</p>
+<p class="text-base font-normal text-[#617589] dark:text-gray-300">Please select your primary unit to continue.</p>
+</div>
+<!-- Radio List for Units -->
+<div class="flex flex-col gap-3 max-w-md mx-auto w-full">
+<label class="flex cursor-pointer items-center gap-4 rounded-xl border border-solid border-[#E0E0E0] dark:border-gray-700 bg-white dark:bg-gray-800 p-4 ring-2 ring-transparent has-[:checked]:border-primary has-[:checked]:ring-primary/20 transition-all">
+<div class="flex grow flex-col">
+<p class="text-sm font-medium text-[#333333] dark:text-white">Unit #1201</p>
+</div>
+<input checked="" class="h-5 w-5 appearance-none rounded-full border-2 border-[#E0E0E0] dark:border-gray-600 bg-transparent text-transparent checked:border-primary checked:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 focus:ring-primary/50" name="unit-selection" type="radio"/>
+</label>
+<label class="flex cursor-pointer items-center gap-4 rounded-xl border border-solid border-[#E0E0E0] dark:border-gray-700 bg-white dark:bg-gray-800 p-4 ring-2 ring-transparent has-[:checked]:border-primary has-[:checked]:ring-primary/20 transition-all">
+<div class="flex grow flex-col">
+<p class="text-sm font-medium text-[#333333] dark:text-white">Unit #2503 - Penthouse</p>
+</div>
+<input class="h-5 w-5 appearance-none rounded-full border-2 border-[#E0E0E0] dark:border-gray-600 bg-transparent text-transparent checked:border-primary checked:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800 focus:ring-primary/50" name="unit-selection" type="radio"/>
+</label>
+</div>
+</section>
+<!-- Step 2: Feature Introduction -->
+<section class="flex flex-col gap-6">
+<!-- Section Header -->
+<h2 class="text-2xl font-bold text-[#333333] dark:text-white tracking-tight text-center">Here's a quick look at what you can do</h2>
+<!-- Text Grid for Features -->
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+<div class="flex flex-1 flex-col gap-4 rounded-xl border border-[#E0E0E0] dark:border-gray-700 bg-white dark:bg-gray-800 p-5 text-center items-center">
+<div class="flex items-center justify-center size-12 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-2xl">campaign</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-base font-bold text-[#333333] dark:text-white">Announcements</h3>
+<p class="text-sm font-normal text-[#617589] dark:text-gray-300">Stay updated with important building news and community events.</p>
+</div>
+</div>
+<div class="flex flex-1 flex-col gap-4 rounded-xl border border-[#E0E0E0] dark:border-gray-700 bg-white dark:bg-gray-800 p-5 text-center items-center">
+<div class="flex items-center justify-center size-12 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-2xl">event_available</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-base font-bold text-[#333333] dark:text-white">Facility Booking</h3>
+<p class="text-sm font-normal text-[#617589] dark:text-gray-300">Easily reserve amenities like the gym, pool, or party room.</p>
+</div>
+</div>
+<div class="flex flex-1 flex-col gap-4 rounded-xl border border-[#E0E0E0] dark:border-gray-700 bg-white dark:bg-gray-800 p-5 text-center items-center sm:col-span-2 lg:col-span-1">
+<div class="flex items-center justify-center size-12 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-2xl">build</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-base font-bold text-[#333333] dark:text-white">Incident Reporting</h3>
+<p class="text-sm font-normal text-[#617589] dark:text-gray-300">Report maintenance issues or incidents directly to management.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Progress Indicator & Actions -->
+<div class="flex flex-col items-center gap-6 pt-4">
+<!-- Dots -->
+<div class="flex items-center justify-center gap-2">
+<span class="block size-2 rounded-full bg-primary"></span>
+<span class="block size-2 rounded-full bg-primary"></span>
+</div>
+<!-- CTA Buttons -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md">
+<button class="w-full text-center rounded-lg bg-primary px-6 py-3 text-sm font-bold text-white shadow-sm transition-all hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 dark:focus:ring-offset-background-dark">Let's Get Started</button>
+<button class="w-full text-center rounded-lg bg-transparent px-6 py-3 text-sm font-bold text-[#617589] dark:text-gray-300 transition-all hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400/50 focus:ring-offset-2 dark:focus:ring-offset-background-dark">Skip for now</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

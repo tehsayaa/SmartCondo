@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smart Condo - Announcements</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f9fafb",
+                        "background-dark": "#101922",
+                        "charcoal": "#1f2937",
+                        "muted-grey": "#6b7280",
+                        "success": "#10b981",
+                        "error": "#ef4444",
+                        "warning": "#f59e0b",
+                        "brand-gray": {
+                            50: '#F9FAFB',
+                            100: '#F3F4F6',
+                            200: '#E5E7EB',
+                            300: '#D1D5DB',
+                            400: '#9CA3AF',
+                            500: '#6B7280',
+                            600: '#4B5563',
+                            700: '#374151',
+                            800: '#1F2937',
+                            900: '#111827',
+                        }
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="flex min-h-screen w-full flex-col">
+<header class="sticky top-0 z-10 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md dark:border-gray-800 dark:bg-background-dark/80">
+<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">apartment</span>
+<span class="text-xl font-bold text-charcoal dark:text-white">Smart Condo</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative rounded-full p-2 text-muted-grey hover:bg-gray-100 hover:text-charcoal dark:hover:bg-gray-800 dark:hover:text-white">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button>
+<img alt="User avatar" class="h-9 w-9 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH3fwHrQWuJ7DQor4izLHpvBTivq3W1MoNyTbimLdrt76fnjJkzAoEosYfO40e6DgCjMiG96McJJiSCxqLsBflsyH_ero091KOyM1l-JKfLIMvNDg3GnOHRwKMrbNsAcZFpBomtkzEflZfp7huK-Kx75IpK-lYTJWMGfbi2-czBnW_Fr8EmVpC4_wy1CBZWoQUuweDmQjEGvI-Ov4njEfcj12c4VoPczPHNOlyMZ01UjoIvlCbcryrTNTLiN_K81lG1Nh5aizfiXFn"/>
+</button>
+</div>
+</div>
+</header>
+<main class="w-full flex-grow">
+<div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+<h1 class="text-3xl font-bold tracking-tight text-charcoal dark:text-white">Announcements</h1>
+<div class="mt-6 flex flex-col gap-4 border-b border-gray-200 pb-5 dark:border-gray-800 md:flex-row md:items-center md:justify-between">
+<div class="flex flex-nowrap items-center gap-2 overflow-x-auto pb-2 md:pb-0">
+<button class="flex-shrink-0 whitespace-nowrap rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary dark:bg-primary/20">All</button>
+<button class="flex-shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium text-muted-grey hover:bg-gray-100 hover:text-charcoal dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white">Maintenance</button>
+<button class="flex-shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium text-muted-grey hover:bg-gray-100 hover:text-charcoal dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white">Events</button>
+<button class="flex-shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium text-muted-grey hover:bg-gray-100 hover:text-charcoal dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white">Community</button>
+<button class="flex-shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium text-muted-grey hover:bg-gray-100 hover:text-charcoal dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white">Rules</button>
+</div>
+<div class="flex items-center justify-between gap-4 md:justify-end">
+<div class="relative flex items-center">
+<label class="mr-3 text-sm font-medium text-charcoal dark:text-gray-300" for="unread-toggle">Unread only</label>
+<input class="peer sr-only" id="unread-toggle" type="checkbox"/>
+<div class="peer h-6 w-11 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-primary peer-checked:after:translate-x-full peer-checked:after:border-white dark:bg-gray-700 dark:peer-focus:ring-primary"></div>
+</div>
+</div>
+</div>
+<div class="mt-8 flow-root">
+<ul class="-my-6 divide-y divide-gray-200 dark:divide-gray-800">
+<li class="relative flex cursor-pointer items-start space-x-4 py-6 transition-colors hover:bg-gray-50 dark:hover:bg-gray-900/50">
+<div aria-label="Unread" class="w-2.5 h-2.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+<div class="min-w-0 flex-1">
+<div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+<h2 class="truncate text-base font-semibold text-charcoal dark:text-white">
+<a class="focus:outline-none" href="#">
+<span aria-hidden="true" class="absolute inset-0"></span>
+                                        Emergency Water Shut-off Notice
+                                    </a>
+</h2>
+<time class="flex-shrink-0 text-xs text-muted-grey dark:text-gray-400">July 22, 2024</time>
+</div>
+<p class="mt-1 text-sm text-muted-grey dark:text-gray-400">
+                                Urgent: Water will be shut off today from 2 PM to 4 PM for emergency pipe repairs in the main building. We apologize for the inconvenience...
+                            </p>
+<div class="mt-3 flex items-center gap-3">
+<span class="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800 dark:bg-error/20 dark:text-red-300">
+<span class="material-symbols-outlined mr-1.5 text-sm">priority_high</span>
+                                    Emergency
+                                </span>
+<span class="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:bg-primary/20 dark:text-blue-300">Maintenance</span>
+</div>
+</div>
+</li>
+<li class="relative flex cursor-pointer items-start space-x-4 py-6 transition-colors hover:bg-gray-50 dark:hover:bg-gray-900/50">
+<div aria-label="Read" class="w-2.5 h-2.5 rounded-full bg-transparent mt-2 flex-shrink-0"></div>
+<div class="min-w-0 flex-1">
+<div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+<h2 class="truncate text-base font-semibold text-charcoal dark:text-white">
+<a class="focus:outline-none" href="#">
+<span aria-hidden="true" class="absolute inset-0"></span>
+                                        Annual Fire Alarm System Testing
+                                    </a>
+</h2>
+<time class="flex-shrink-0 text-xs text-muted-grey dark:text-gray-400">July 20, 2024</time>
+</div>
+<p class="mt-1 text-sm text-muted-grey dark:text-gray-400">
+                                Please be advised that the annual fire alarm testing will take place on Friday, July 26th, between 10 AM and 1 PM. Alarms may sound intermittently.
+                            </p>
+<div class="mt-3 flex items-center gap-3">
+<span class="inline-flex items-center rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-medium text-yellow-800 dark:bg-warning/20 dark:text-yellow-300">
+<span class="material-symbols-outlined mr-1.5 text-sm">arrow_upward</span>
+                                    High
+                                </span>
+<span class="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:bg-primary/20 dark:text-blue-300">Maintenance</span>
+</div>
+</div>
+</li>
+<li class="relative flex cursor-pointer items-start space-x-4 py-6 transition-colors hover:bg-gray-50 dark:hover:bg-gray-900/50">
+<div aria-label="Read" class="w-2.5 h-2.5 rounded-full bg-transparent mt-2 flex-shrink-0"></div>
+<div class="min-w-0 flex-1">
+<div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+<h2 class="truncate text-base font-semibold text-charcoal dark:text-white">
+<a class="focus:outline-none" href="#">
+<span aria-hidden="true" class="absolute inset-0"></span>
+                                        Community BBQ &amp; Pool Party
+                                    </a>
+</h2>
+<time class="flex-shrink-0 text-xs text-muted-grey dark:text-gray-400">July 18, 2024</time>
+</div>
+<p class="mt-1 text-sm text-muted-grey dark:text-gray-400">
+                                Join us for our annual summer BBQ! We'll have food, music, and fun for the whole family at the poolside on August 3rd from 12 PM. RSVP by July 30th.
+                            </p>
+<div class="mt-3 flex items-center gap-3">
+<span class="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-800 dark:bg-brand-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined mr-1.5 text-sm">arrow_downward</span>
+                                    Normal
+                                </span>
+<span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-success/20 dark:text-green-300">Events</span>
+</div>
+</div>
+</li>
+<li class="relative flex cursor-pointer items-start space-x-4 py-6 transition-colors hover:bg-gray-50 dark:hover:bg-gray-900/50">
+<div aria-label="Unread" class="w-2.5 h-2.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+<div class="min-w-0 flex-1">
+<div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+<h2 class="truncate text-base font-semibold text-charcoal dark:text-white">
+<a class="focus:outline-none" href="#">
+<span aria-hidden="true" class="absolute inset-0"></span>
+                                        Reminder: New Recycling Rules
+                                    </a>
+</h2>
+<time class="flex-shrink-0 text-xs text-muted-grey dark:text-gray-400">July 15, 2024</time>
+</div>
+<p class="mt-1 text-sm text-muted-grey dark:text-gray-400">
+                                This is a friendly reminder about the new recycling guidelines that started this month. Please ensure you are sorting your waste correctly.
+                            </p>
+<div class="mt-3 flex items-center gap-3">
+<span class="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-800 dark:bg-brand-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined mr-1.5 text-sm">arrow_downward</span>
+                                    Normal
+                                </span>
+<span class="inline-flex items-center rounded-full bg-purple-100 px-2.5 py-0.5 text-xs font-medium text-purple-800 dark:bg-purple-500/20 dark:text-purple-300">Rules</span>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<nav class="mt-8 flex items-center justify-between border-t border-gray-200 px-4 py-3 dark:border-gray-800 sm:px-0">
+<div class="flex w-0 flex-1">
+<a class="inline-flex items-center border-t-2 border-transparent pr-1 pt-4 text-sm font-medium text-muted-grey hover:border-gray-300 hover:text-charcoal dark:hover:border-gray-600 dark:hover:text-gray-300" href="#">
+<span class="material-symbols-outlined mr-3 h-5 w-5">arrow_back</span>
+                        Previous
+                    </a>
+</div>
+<div class="hidden md:flex">
+<a aria-current="page" class="inline-flex items-center border-t-2 border-primary px-4 pt-4 text-sm font-medium text-primary" href="#">1</a>
+<a class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-muted-grey hover:border-gray-300 hover:text-charcoal dark:hover:border-gray-600 dark:hover:text-gray-300" href="#">2</a>
+<a class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-muted-grey hover:border-gray-300 hover:text-charcoal dark:hover:border-gray-600 dark:hover:text-gray-300" href="#">3</a>
+<span class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-muted-grey">...</span>
+<a class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-muted-grey hover:border-gray-300 hover:text-charcoal dark:hover:border-gray-600 dark:hover:text-gray-300" href="#">10</a>
+</div>
+<div class="flex w-0 flex-1 justify-end">
+<a class="inline-flex items-center border-t-2 border-transparent pl-1 pt-4 text-sm font-medium text-muted-grey hover:border-gray-300 hover:text-charcoal dark:hover:border-gray-600 dark:hover:text-gray-300" href="#">
+                        Next
+                        <span class="material-symbols-outlined ml-3 h-5 w-5">arrow_forward</span>
+</a>
+</div>
+</nav>
+</div>
+</main>
+</div>
+
+</body></html>

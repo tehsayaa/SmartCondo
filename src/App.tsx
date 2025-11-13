@@ -8,6 +8,10 @@ import AppShell from "./components/layout/AppShell";
 
 // Page Imports
 import DashboardPage from "./pages/DashboardPage";
+import FacilitiesPage from "./pages/FacilitiesPage";
+import TicketsPage from "./pages/TicketsPage";
+import BookingsPage from "./pages/BookingsPage";
+import CreateTicketPage from "./pages/CreateTicketPage";
 import { ThemeTest } from "./components/ThemeTest";
 
 // Auth Pages (placeholders for now)
@@ -18,11 +22,11 @@ const OnboardingPage = () => <div>Onboarding Page</div>;
 // Resident Pages (placeholders for now)
 const AnnouncementListPage = () => <div>Announcement List</div>;
 const AnnouncementDetailPage = () => <div>Announcement Detail</div>;
-const FacilityListPage = () => <div>Facility List</div>;
+const FacilityListPage = () => <FacilitiesPage />;
 const FacilityBookingPage = () => <div>Facility Booking</div>;
-const MyBookingsPage = () => <div>My Bookings</div>;
-const ServiceRequestListPage = () => <div>Service Request List</div>;
-const CreateServiceRequestPage = () => <div>Create Service Request</div>;
+const MyBookingsPage = () => <BookingsPage />;
+const ServiceRequestListPage = () => <TicketsPage />;
+const CreateServiceRequestPage = () => <CreateTicketPage />;
 const ServiceRequestDetailPage = () => <div>Service Request Detail</div>;
 const AIChatPage = () => <div>AI Chat</div>;
 

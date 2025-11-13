@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Condo Assistant</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex h-screen w-full flex-col items-center justify-center p-4">
+<!-- Chatbot Window -->
+<div class="flex flex-col w-full max-w-[440px] h-full max-h-[720px] bg-white dark:bg-gray-900 rounded-xl shadow-2xl overflow-hidden">
+<!-- Header -->
+<div class="flex items-center justify-between p-3 border-b border-gray-200 dark:border-gray-700 shrink-0">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img class="w-10 h-10 rounded-full" data-alt="AI assistant avatar with an abstract circular pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFcgJJZ0frGXhjwAqyZO0BTqt7y1hIf8gtECO1WFKMnSIwVt6vzp7spy28Xq85jFaWRBPAcP4irvE3TwfsTlGIrEMytwXzDJnkw4w8RJ4-F0u3uPJrrv6wNxPMhjydQ7stGRvOYDasSEQCUGVbpFx2Wi6cD237OG33LzGPm3crD51wsal5bV51R5FDcb2M-samOztJ3xqxXsZwewes2-cH-JLD25QyfIAlTlVyHBpzFZDVXTjPg26iSYhWCZ9hwpF3EMOqqvl2cs8l"/>
+<span class="absolute bottom-0 right-0 block h-2.5 w-2.5 rounded-full bg-green-500 ring-2 ring-white dark:ring-gray-900"></span>
+</div>
+<div>
+<h3 class="text-base font-semibold text-gray-900 dark:text-white">Condo Assistant</h3>
+<p class="text-xs text-gray-500 dark:text-gray-400">Online</p>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-2 text-gray-500 rounded-full hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined text-xl">remove</span>
+</button>
+<button class="p-2 text-gray-500 rounded-full hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+</div>
+<!-- Conversation Area -->
+<div class="flex-1 overflow-y-auto p-4 space-y-6">
+<!-- Welcome Message -->
+<div class="flex items-end gap-3">
+<img class="w-8 h-8 rounded-full shrink-0" data-alt="AI assistant avatar with an abstract circular pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNXlBAtT6T0VJGzVXgkg2WdirnFA3Iu2AyZNWN83BTc-ssHz48Q8TA9fZ9uG9XzFa1bpoMg6Wk67oBQ__73xZr642MZ_R5KXp-Q7KWJhlwOq9-Y4AnunO7h5hUPuXDJV4PQuoZ0JvztCZB8IkyiPbKZIG1f4ZPfUOgcDUkSYSepvFz_r9GZqt2Vb85t8QNx8xxCNtn-OXai4E5ExPBXcuhJ9XfCcxZo60_WDszFRsbxLEPI6arOsdPmA2_PKx1fmGZOHUdGYp2gkRB"/>
+<div class="flex flex-col items-start gap-2">
+<p class="text-sm font-medium text-gray-700 dark:text-gray-300">Condo Assistant</p>
+<div class="rounded-lg rounded-tl-none bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-4 py-2.5 max-w-xs text-sm">
+                        Hello! I'm your Condo Assistant. How can I help you today?
+                    </div>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex items-end gap-3 justify-end">
+<div class="flex flex-col items-end gap-2">
+<p class="text-sm font-medium text-gray-700 dark:text-gray-300">You</p>
+<div class="rounded-lg rounded-tr-none bg-primary text-white px-4 py-2.5 max-w-xs text-sm">
+                        Book gym tomorrow 7–8am
+                    </div>
+</div>
+<img class="w-8 h-8 rounded-full shrink-0" data-alt="Resident's profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdqwcZmkkBSk4lBOxcr794GfcjpAYI2t-J8UOMJxdDY94u_Pi8xqnxztQc5owyos9ACasnQa9netXlViOZu6LIppuppE-xSAPInXGV-d7hbuO0ZyCQbwc8r6oMKXw8B5RHkLBzNo6ZEzO96C6EPfeBVX7cuw-v_bVMxiy2ua_8gvwYr44CtzjYyLx2rmNYPctPTETp4psl37pXC9Pt8hYM8jXiG5ZX2A5g3_c-rSyK8-c7VQIFLBfmyFqLaj9KqLJ0iYzRrKBkoeAz"/>
+</div>
+<!-- AI Response with Booking Card -->
+<div class="flex items-end gap-3">
+<img class="w-8 h-8 rounded-full shrink-0" data-alt="AI assistant avatar with an abstract circular pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU7x9CkBYBKhGQbycReQtaG-jSsxgut6LQMp7Yx4m3kC7vF-5N9l3YBzae43IM3FjpudVsZOqfEU3F8z66PoFAjt7Vixx99xb960it4QyFQAxFD7SLdXQCNjFLR0rDt3W-d2o5jB9iK7m7G-qDlNjKb_dt9VFTC8h-3925LA6opW-tSVHeSbKWT1ZIA8qEMJS_C66_ZD3jIbL8PuNx9ZHmq8oe9xHlfPMOMaBHi24vZkX82ELL9QsIRT-oTTvzmJ9wjFV04r5a7uHW"/>
+<div class="flex flex-col items-start gap-2">
+<p class="text-sm font-medium text-gray-700 dark:text-gray-300">Condo Assistant</p>
+<div class="rounded-lg rounded-tl-none bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-4 py-2.5 max-w-xs text-sm">
+                        Sure, here are the details for your booking. Please review and confirm.
+                    </div>
+<!-- Booking Confirmation Card -->
+<div class="w-full max-w-xs p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm">
+<h4 class="text-base font-semibold text-gray-900 dark:text-white mb-3">Booking Confirmation</h4>
+<div class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+<div class="flex justify-between"><span class="font-medium text-gray-500 dark:text-gray-400">Facility:</span> <span>Gym</span></div>
+<div class="flex justify-between"><span class="font-medium text-gray-500 dark:text-gray-400">Date:</span> <span>Tomorrow, Oct 27</span></div>
+<div class="flex justify-between"><span class="font-medium text-gray-500 dark:text-gray-400">Time:</span> <span>7:00 AM - 8:00 AM</span></div>
+<div class="flex justify-between"><span class="font-medium text-gray-500 dark:text-gray-400">Guests:</span> <span>0</span></div>
+</div>
+<div class="mt-4 flex gap-2">
+<button class="flex-1 px-4 py-2 text-sm font-semibold text-white bg-green-600 hover:bg-green-700 rounded-md">Confirm</button>
+<button class="flex-1 px-4 py-2 text-sm font-semibold text-gray-700 dark:text-gray-200 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-md">Edit</button>
+<button class="px-3 py-2 text-sm font-semibold text-red-600 hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-900/50 rounded-md">Cancel</button>
+</div>
+</div>
+</div>
+</div>
+<!-- AI Typing Indicator -->
+<div class="flex items-end gap-3">
+<img class="w-8 h-8 rounded-full shrink-0" data-alt="AI assistant avatar with an abstract circular pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmP4u49G48DAjgANF8YWo9vU1zEtkzLgPU125mglgzucuJXbJ2fFJjOrt28tbZ0Ti_Hb9x_18Eac-13PrWkIGhiAdGvQmBLEk-QtOkNmV60jDeITDuhfEHQI7yqPl6_Lg8MOdNsca4ekzyVEVQD3eWZpG8fIGfhlzYl2y5lX5RohYuszUaG2ud9BiXfvj3dLX4CldfMb2FR1EMKcoULmsVt4V1Cbo35JfyIRlUHWt_5mR0hih92kKvAxM7LmWSeGyWPDr5_EMX4wWZ"/>
+<div class="flex flex-col items-start gap-2">
+<div class="rounded-lg rounded-tl-none bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-4 py-2.5 max-w-xs text-sm">
+<div class="flex items-center gap-1.5">
+<span class="h-1.5 w-1.5 bg-gray-400 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
+<span class="h-1.5 w-1.5 bg-gray-400 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
+<span class="h-1.5 w-1.5 bg-gray-400 rounded-full animate-bounce"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Input Area -->
+<div class="p-4 border-t border-gray-200 dark:border-gray-700 shrink-0">
+<!-- Quick Action Chips -->
+<div class="flex gap-2 mb-3 overflow-x-auto pb-2 -mx-4 px-4">
+<button class="px-3 py-1.5 text-sm font-medium text-primary bg-primary/10 dark:bg-primary/20 dark:text-blue-300 rounded-full whitespace-nowrap hover:bg-primary/20">Book a Facility</button>
+<button class="px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 rounded-full whitespace-nowrap hover:bg-gray-200 dark:hover:bg-gray-600">View Announcements</button>
+<button class="px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 rounded-full whitespace-nowrap hover:bg-gray-200 dark:hover:bg-gray-600">Report a Problem</button>
+</div>
+<!-- Text Input -->
+<div class="relative">
+<input class="w-full pl-4 pr-12 py-2.5 text-sm bg-gray-100 dark:bg-gray-800 border-transparent rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:text-white dark:placeholder-gray-400" placeholder="Ask me anything..." type="text"/>
+<button class="absolute inset-y-0 right-0 flex items-center justify-center w-10 h-10 text-primary rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">
+<span class="material-symbols-outlined text-2xl">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

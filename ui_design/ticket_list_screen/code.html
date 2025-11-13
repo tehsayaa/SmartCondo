@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Service Requests - Smart Condo Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+              "text-light": "#111418",
+              "text-dark": "#f0f2f4",
+              "text-secondary-light": "#617589",
+              "text-secondary-dark": "#94a3b8",
+              "border-light": "#e5e7eb",
+              "border-dark": "#334155",
+              "card-light": "#ffffff",
+              "card-dark": "#1f2937"
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+<div class="relative flex min-h-screen w-full">
+<!-- SideNavBar -->
+<aside class="sticky top-0 h-screen w-64 flex-col border-r border-border-light bg-card-light p-4 dark:border-border-dark dark:bg-card-dark hidden lg:flex">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 px-2 py-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="A portrait of the user, Jane Doe" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDcBUtQ01nG5tPJACcEbs1wqV9lX0mtqSfWj-yIYyOM-S7975ostPpoQBdwpv82jAbpWBMUiq3Qv_uZR9GpS2EJQFErPx0SeS17fFcVAqxUEWlNVT2SKYZAiDHE-V7U9i4qeWKiHnvT6nO-dMH1BP5G5rfE-D5AJjBHfklok5J3qpMmpBfIYiSR-9h9wHIbJ5gzdSVso1gjunyxc8AhVyJ5W9GBwL6KqRBV193m3-llVviQM6xqB7TrujSDuxAi_5rcBuGQhnVF-hS5");'></div>
+<div class="flex flex-col">
+<h1 class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Jane Doe</h1>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal">Unit 502</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 text-text-light dark:text-text-dark hover:bg-primary/10 rounded-lg" href="#">
+<span class="material-symbols-outlined text-text-light dark:text-text-dark">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined !fill-1">construction</span>
+<p class="text-sm font-bold leading-normal">My Service Requests</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-text-light dark:text-text-dark hover:bg-primary/10 rounded-lg" href="#">
+<span class="material-symbols-outlined">groups</span>
+<p class="text-sm font-medium leading-normal">Community</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-text-light dark:text-text-dark hover:bg-primary/10 rounded-lg" href="#">
+<span class="material-symbols-outlined">credit_card</span>
+<p class="text-sm font-medium leading-normal">Payments</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-text-light dark:text-text-dark hover:bg-primary/10 rounded-lg" href="#">
+<span class="material-symbols-outlined">description</span>
+<p class="text-sm font-medium leading-normal">Documents</p>
+</a>
+</nav>
+</div>
+<div class="mt-auto flex flex-col gap-4">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal shadow-sm hover:bg-primary/90 transition-colors">
+<span class="truncate">Submit New Ticket</span>
+</button>
+<div class="flex flex-col gap-1 border-t border-border-light pt-4 dark:border-border-dark">
+<a class="flex items-center gap-3 px-3 py-2 text-text-light dark:text-text-dark hover:bg-primary/10 rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-text-light dark:text-text-dark hover:bg-primary/10 rounded-lg" href="#">
+<span class="material-symbols-outlined">logout</span>
+<p class="text-sm font-medium leading-normal">Logout</p>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-4 sm:p-6 lg:p-8">
+<div class="max-w-7xl mx-auto">
+<!-- PageHeading -->
+<header class="flex flex-col sm:flex-row flex-wrap items-center justify-between gap-4 mb-6">
+<h1 class="text-text-light dark:text-text-dark text-3xl sm:text-4xl font-black tracking-tight min-w-72">My Service Requests</h1>
+<button class="w-full sm:w-auto flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal shadow-sm hover:bg-primary/90 transition-colors">
+<span class="truncate">Submit New Ticket</span>
+</button>
+</header>
+<!-- Chips -->
+<div class="flex gap-2 p-1 overflow-x-auto mb-6 w-full">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 px-4 text-primary">
+<p class="text-sm font-medium leading-normal">All</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-card-light dark:bg-card-dark px-4 hover:bg-gray-200 dark:hover:bg-white/10 transition-colors">
+<p class="text-sm font-medium leading-normal">Open</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-card-light dark:bg-card-dark px-4 hover:bg-gray-200 dark:hover:bg-white/10 transition-colors">
+<p class="text-sm font-medium leading-normal">In Progress</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-card-light dark:bg-card-dark px-4 hover:bg-gray-200 dark:hover:bg-white/10 transition-colors">
+<p class="text-sm font-medium leading-normal">Resolved</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-card-light dark:bg-card-dark px-4 hover:bg-gray-200 dark:hover:bg-white/10 transition-colors">
+<p class="text-sm font-medium leading-normal">Closed</p>
+</button>
+</div>
+<!-- Ticket List -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Ticket Card 1 -->
+<div class="flex flex-col gap-4 bg-card-light dark:bg-card-dark rounded-xl p-5 border border-border-light dark:border-border-dark hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+<div class="flex items-start gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-12">
+<span class="material-symbols-outlined">water_drop</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal">Plumbing</p>
+<p class="text-text-light dark:text-text-dark text-base font-bold leading-normal">Leaky Faucet in Master Bathroom</p>
+</div>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="inline-flex items-center rounded-full bg-blue-100 dark:bg-blue-900/50 px-3 py-1 text-xs font-medium text-blue-700 dark:text-blue-300">In Progress</span>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">Opened 2 days ago</p>
+</div>
+<div class="border-t border-border-light dark:border-border-dark pt-3 mt-auto">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal">Unit 502 • Oct 26, 2023</p>
+</div>
+</div>
+<!-- Ticket Card 2 -->
+<div class="flex flex-col gap-4 bg-card-light dark:bg-card-dark rounded-xl p-5 border border-border-light dark:border-border-dark hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+<div class="flex items-start gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-12">
+<span class="material-symbols-outlined">ac_unit</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal">HVAC</p>
+<p class="text-text-light dark:text-text-dark text-base font-bold leading-normal">AC Unit Not Cooling</p>
+</div>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/50 px-3 py-1 text-xs font-medium text-green-700 dark:text-green-300">Resolved</span>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">Updated 5 hours ago</p>
+</div>
+<div class="border-t border-border-light dark:border-border-dark pt-3 mt-auto">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal">Unit 502 • Oct 24, 2023</p>
+</div>
+</div>
+<!-- Ticket Card 3 -->
+<div class="flex flex-col gap-4 bg-card-light dark:bg-card-dark rounded-xl p-5 border border-border-light dark:border-border-dark hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+<div class="flex items-start gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-12">
+<span class="material-symbols-outlined">lightbulb</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal">Electrical</p>
+<p class="text-text-light dark:text-text-dark text-base font-bold leading-normal">Lobby light fixture is flickering</p>
+</div>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="inline-flex items-center rounded-full bg-orange-100 dark:bg-orange-900/50 px-3 py-1 text-xs font-medium text-orange-700 dark:text-orange-300">Open</span>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">Opened 1 day ago</p>
+</div>
+<div class="border-t border-border-light dark:border-border-dark pt-3 mt-auto">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal">Common Area • Oct 27, 2023</p>
+</div>
+</div>
+<!-- Ticket Card 4 -->
+<div class="flex flex-col gap-4 bg-card-light dark:bg-card-dark rounded-xl p-5 border border-border-light dark:border-border-dark hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+<div class="flex items-start gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-12">
+<span class="material-symbols-outlined">door_front</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal">General Maintenance</p>
+<p class="text-text-light dark:text-text-dark text-base font-bold leading-normal">Front door lock is sticking</p>
+</div>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="inline-flex items-center rounded-full bg-gray-100 dark:bg-gray-700 px-3 py-1 text-xs font-medium text-gray-600 dark:text-gray-300">Closed</span>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">Closed 3 weeks ago</p>
+</div>
+<div class="border-t border-border-light dark:border-border-dark pt-3 mt-auto">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal">Unit 502 • Oct 02, 2023</p>
+</div>
+</div>
+</div>
+<!-- Empty State -->
+<!-- <div class="text-center border-2 border-dashed border-border-light dark:border-border-dark rounded-xl py-20 px-6 mt-6">
+                    <div class="mx-auto flex size-14 items-center justify-center rounded-full bg-primary/10 text-primary">
+                        <span class="material-symbols-outlined !text-3xl">inbox</span>
+                    </div>
+                    <h2 class="mt-4 text-xl font-bold text-text-light dark:text-text-dark">You have no open tickets.</h2>
+                    <p class="mt-2 text-text-secondary-light dark:text-text-secondary-dark">Need assistance? Submit a new ticket to get started.</p>
+                    <button class="mt-6 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal shadow-sm hover:bg-primary/90 transition-colors mx-auto">
+                        <span class="truncate">Submit New Ticket</span>
+                    </button>
+                </div> -->
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Bookings - Smart Condo Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4A90E2", 
+                        "background-light": "#F8F9FA",
+                        "background-dark": "#101922", 
+                        "text-light": "#333333",
+                        "text-dark": "#E0E0E0",
+                        "border-light": "#E0E0E0",
+                        "border-dark": "#333333",
+                        "status-approved": "#28A745",
+                        "status-pending": "#FFC107",
+                        "status-cancelled": "#6C757D",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="flex flex-col md:flex-row h-full grow">
+<!-- Side Navigation -->
+<aside class="w-full md:w-64 flex-shrink-0 bg-white dark:bg-background-dark p-4 border-b md:border-b-0 md:border-r border-border-light dark:border-border-dark">
+<div class="flex flex-col justify-between h-full">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAJuffeq3lT-wtN5QMUvoq7mIICwQnHmisBl9nHUkH--roSUgbYYjQPjL31OsBQaoxYpicK9yHUvoQNr-Sa7ZoT5kFm3tgzATvNIfRxp_Mj3xUqBASHVw5YL5GTTf6fy54lXHIe5HvHv67GP_GcWXvGrcjtkonB3LM3j-u3eFUAyPumm7OMZRmWq-7DbEjrOMljEmUIot44-IgApGsCUbkeyMKtiSwoCoTJnjM-UTOeicqcE14N25cV6_8juwyu10vyCSlTb6xidxWI");'></div>
+<div class="flex flex-col">
+<h1 class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Alex Chen</h1>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Unit #1204</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-primary/10 rounded-lg" href="#">
+<span class="material-symbols-outlined text-gray-800 dark:text-gray-200" style="font-size: 24px;">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 dark:bg-primary/30" href="#">
+<span class="material-symbols-outlined text-primary" style="font-size: 24px; font-variation-settings: 'FILL' 1;">event_available</span>
+<p class="text-primary text-sm font-bold leading-normal">My Bookings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-primary/10 rounded-lg" href="#">
+<span class="material-symbols-outlined text-gray-800 dark:text-gray-200" style="font-size: 24px;">group</span>
+<p class="text-sm font-medium leading-normal">Visitors</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-primary/10 rounded-lg" href="#">
+<span class="material-symbols-outlined text-gray-800 dark:text-gray-200" style="font-size: 24px;">campaign</span>
+<p class="text-sm font-medium leading-normal">Announcements</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-primary/10 rounded-lg" href="#">
+<span class="material-symbols-outlined text-gray-800 dark:text-gray-200" style="font-size: 24px;">credit_card</span>
+<p class="text-sm font-medium leading-normal">Payments</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-1 mt-8">
+<a class="flex items-center gap-3 px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-primary/10 rounded-lg" href="#">
+<span class="material-symbols-outlined text-gray-800 dark:text-gray-200" style="font-size: 24px;">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-primary/10 rounded-lg" href="#">
+<span class="material-symbols-outlined text-gray-800 dark:text-gray-200" style="font-size: 24px;">logout</span>
+<p class="text-sm font-medium leading-normal">Log Out</p>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-4 sm:p-6 md:p-8">
+<div class="max-w-7xl mx-auto">
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between items-center gap-4 mb-4">
+<h1 class="text-text-light dark:text-text-dark text-4xl font-black leading-tight tracking-[-0.033em]">My Bookings</h1>
+<button class="flex items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-5 bg-primary text-white text-sm font-medium leading-normal min-w-[120px]">
+<span class="material-symbols-outlined" style="font-size: 20px;">add</span>
+<span class="truncate">New Booking</span>
+</button>
+</div>
+<!-- Tabs and View Toggle -->
+<div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+<!-- Tabs -->
+<div class="w-full sm:w-auto border-b border-border-light dark:border-border-dark">
+<div class="flex gap-8">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-primary pb-[13px] pt-4" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Upcoming</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-gray-500 dark:text-gray-400 pb-[13px] pt-4 hover:text-primary dark:hover:text-primary" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">History</p>
+</a>
+</div>
+</div>
+<!-- Segmented Buttons / View Toggle -->
+<div class="flex-shrink-0 w-full sm:w-auto">
+<div class="flex h-10 items-center justify-center rounded-lg bg-gray-200 dark:bg-gray-700 p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-3 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-800 has-[:checked]:shadow-sm has-[:checked]:text-text-light dark:has-[:checked]:text-text-dark text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal">
+<span class="material-symbols-outlined mr-1" style="font-size: 20px;">grid_view</span>
+<span class="truncate">Card View</span>
+<input checked="" class="invisible w-0" name="view-toggle" type="radio" value="Card View"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-3 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-800 has-[:checked]:shadow-sm has-[:checked]:text-text-light dark:has-[:checked]:text-text-dark text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal">
+<span class="material-symbols-outlined mr-1" style="font-size: 20px;">calendar_month</span>
+<span class="truncate">Calendar View</span>
+<input class="invisible w-0" name="view-toggle" type="radio" value="Calendar View"/>
+</label>
+</div>
+</div>
+</div>
+<!-- Bookings Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mt-6">
+<!-- Card 1: Approved -->
+<div class="flex flex-col items-stretch justify-between gap-4 rounded-xl bg-white dark:bg-gray-800 p-4 shadow-[0_4px_12px_rgba(0,0,0,0.05)] dark:shadow-[0_4px_12px_rgba(0,0,0,0.2)]">
+<div class="flex flex-col gap-4">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Rooftop swimming pool with lounge chairs" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBri8jb7R5KW1g4GhD-LpqiAe9q-nAwczLSCyvFDpZW88oWA-aTBMZlhIawMk826f-wmHaGMHA3Vv_JW_Eha4SJWBwOjE0ASzhkq-I4L1o53YfdcmZoClNBWpKeAEZrs8_rdk5stbXqVvFzAwr3kh4O3hfloSiFEMW3ZjqOpan6U8iJfRn0Af0sFl1fWumuwRjWjsxokNrg6cwXbAO-m0M858FqRVEYOYuWFmz1vqwcYmiG8YXtKJoxD34ryugHoE6tPZVPUkxJN2zS");'></div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center rounded-full bg-status-approved/20 px-2.5 py-0.5 text-xs font-semibold text-status-approved">Approved</span>
+</div>
+<p class="text-text-light dark:text-text-dark text-lg font-bold leading-tight mt-1">Rooftop Pool</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Sat, Nov 25, 2024 | 4:00 PM - 5:00 PM</p>
+<p class="text-gray-400 dark:text-gray-500 text-xs font-normal leading-normal">ID: BK-20241125-A</p>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-2">
+<button class="flex flex-1 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-gray-100 dark:bg-gray-700 text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:bg-gray-200 dark:hover:bg-gray-600">
+<span class="truncate">View Details</span>
+</button>
+<button class="flex flex-1 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-red-500/10 text-red-600 text-sm font-medium leading-normal hover:bg-red-500/20">
+<span class="truncate">Cancel Booking</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Pending -->
+<div class="flex flex-col items-stretch justify-between gap-4 rounded-xl bg-white dark:bg-gray-800 p-4 shadow-[0_4px_12px_rgba(0,0,0,0.05)] dark:shadow-[0_4px_12px_rgba(0,0,0,0.2)]">
+<div class="flex flex-col gap-4">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Modern fitness center with treadmills and weights" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBqGA_cj-_lXXql8fbb1-g_bZd1ktdx5pqrSOCYn6mouKjwqpsSULrRjkJzC2H1qfQSUuHYfONnZkNuHKA9KZ6UPTGcQPhzZQY_gGuxRCzefLaUFIIQnr5DuJW9VYapEENevBj11CjrBu6Z77qf4CppQ2G63qdGYp6uGICG5eVk8R0Jgr-qcT7l76SfBc4xCCvfb746wGvisn8b7Ir2Y6uMaa7zx5TpnlyKmSPSF4SbQWv7mFyuW7_hPkxT1BKBeZGft50FesLvac36");'></div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center rounded-full bg-status-pending/20 px-2.5 py-0.5 text-xs font-semibold text-yellow-600">Pending</span>
+</div>
+<p class="text-text-light dark:text-text-dark text-lg font-bold leading-tight mt-1">Gym - Zone 1</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Mon, Nov 27, 2024 | 8:00 AM - 9:00 AM</p>
+<p class="text-gray-400 dark:text-gray-500 text-xs font-normal leading-normal">ID: BK-20241127-B</p>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-2">
+<button class="flex flex-1 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-gray-100 dark:bg-gray-700 text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:bg-gray-200 dark:hover:bg-gray-600">
+<span class="truncate">View Details</span>
+</button>
+<button class="flex flex-1 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-red-500/10 text-red-600 text-sm font-medium leading-normal hover:bg-red-500/20">
+<span class="truncate">Cancel Booking</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Approved -->
+<div class="flex flex-col items-stretch justify-between gap-4 rounded-xl bg-white dark:bg-gray-800 p-4 shadow-[0_4px_12px_rgba(0,0,0,0.05)] dark:shadow-[0_4px_12px_rgba(0,0,0,0.2)]">
+<div class="flex flex-col gap-4">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Elegant lounge area with modern furniture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD-abWZNNhEYW-k6wrL56rT0GL6mNvpa1UIVw7INozuxIRB2zKRTMhTlH-CJrE033l1QJQXFRfCQG9Imh0F0PBOKsbM8JiCrJStNGdx_udn7k6dIVzgdn5hrruKq_onLmRYTH3LWdNTqWfW40ZaMp2fxr0TKKseSPfvmT0gLHshfItNLBpwBZVE37GkV_B9iB4nLv9MkPHrZcN_uGZ0So1Q6zIqSQrR8Qj7MsFUSB1UDP02y4NLLMjGt1-RXaynx9D7u3VZVHuy9itv");'></div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center rounded-full bg-status-approved/20 px-2.5 py-0.5 text-xs font-semibold text-status-approved">Approved</span>
+</div>
+<p class="text-text-light dark:text-text-dark text-lg font-bold leading-tight mt-1">Sky Lounge</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Fri, Dec 01, 2024 | 7:00 PM - 10:00 PM</p>
+<p class="text-gray-400 dark:text-gray-500 text-xs font-normal leading-normal">ID: BK-20241201-C</p>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-2">
+<button class="flex flex-1 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-gray-100 dark:bg-gray-700 text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:bg-gray-200 dark:hover:bg-gray-600">
+<span class="truncate">View Details</span>
+</button>
+<button class="flex flex-1 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-red-500/10 text-red-600 text-sm font-medium leading-normal hover:bg-red-500/20">
+<span class="truncate">Cancel Booking</span>
+</button>
+</div>
+</div>
+<!-- Empty State Card (Example) -->
+<div class="col-span-1 lg:col-span-2 xl:col-span-3 mt-8">
+<div class="flex flex-col items-center justify-center text-center p-12 bg-white dark:bg-gray-800 rounded-xl border border-dashed border-border-light dark:border-border-dark">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500 text-5xl mb-4">event_busy</span>
+<h3 class="text-lg font-semibold text-text-light dark:text-text-dark">No more upcoming bookings</h3>
+<p class="text-gray-500 dark:text-gray-400 mt-1 max-w-sm">You've reached the end of your scheduled events. Why not book a new facility?</p>
+<button class="mt-6 flex items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-5 bg-primary text-white text-sm font-medium leading-normal min-w-[120px]">
+<span class="material-symbols-outlined" style="font-size: 20px;">add</span>
+<span class="truncate">Book a Facility</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

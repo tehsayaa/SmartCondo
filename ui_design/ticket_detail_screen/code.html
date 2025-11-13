@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ticket Detail - Smart Condo Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        font-size: 24px;
+      }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-gray-200">
+<div class="relative flex min-h-screen w-full">
+<aside class="sticky top-0 h-screen w-64 flex-col border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark p-4 hidden lg:flex">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 p-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture of Olivia Chen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDu-hQjBDpkLR9um2HzZvSHxL6URuu0OjSIdppSmWHHUHANFhbEDQ028QGHVm5WwEQ49CGCi9Wz_maE-hjOpA124Ln8OIn9XQigkPzfndQaY8foIJT7KanATzW9wOEKRh3eRQR_BP6NLlTl34w219hsrueZUEY7smxOlOLuOh4ViFHL2ddDcDYFJ_ra-MCFZaWWQjeExpBmi0XiA3nP2_8DQVttFQVtJdg9-d_TVE9-8rk-rzd2xgaevqPvdFKGZCK_ULowl5Ldazhz");'></div>
+<div class="flex flex-col">
+<h1 class="text-[#111418] dark:text-white text-base font-medium leading-normal">Olivia Chen</h1>
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Unit 12A</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800/50 rounded-lg" href="#">
+<span class="material-symbols-outlined">home</span>
+<p class="text-sm font-medium">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary" href="#">
+<span class="material-symbols-outlined !font-bold" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+<p class="text-sm font-medium">Tickets</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800/50 rounded-lg" href="#">
+<span class="material-symbols-outlined">deck</span>
+<p class="text-sm font-medium">Amenities</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800/50 rounded-lg" href="#">
+<span class="material-symbols-outlined">groups</span>
+<p class="text-sm font-medium">Community</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800/50 rounded-lg" href="#">
+<span class="material-symbols-outlined">folder</span>
+<p class="text-sm font-medium">Documents</p>
+</a>
+</nav>
+</div>
+<div class="mt-auto flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800/50 rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium">Settings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800/50 rounded-lg" href="#">
+<span class="material-symbols-outlined">logout</span>
+<p class="text-sm font-medium">Logout</p>
+</a>
+</div>
+</aside>
+<main class="flex-1 p-4 sm:p-6 lg:p-8">
+<div class="mx-auto max-w-4xl">
+<div class="flex flex-wrap gap-2 mb-6">
+<a class="text-[#617589] dark:text-gray-400 text-sm font-medium leading-normal hover:text-primary" href="#">Home</a>
+<span class="text-[#617589] dark:text-gray-500 text-sm font-medium leading-normal">/</span>
+<a class="text-[#617589] dark:text-gray-400 text-sm font-medium leading-normal hover:text-primary" href="#">Tickets</a>
+<span class="text-[#617589] dark:text-gray-500 text-sm font-medium leading-normal">/</span>
+<span class="text-[#111418] dark:text-gray-200 text-sm font-medium leading-normal">Ticket #T-14582</span>
+</div>
+<div class="flex flex-wrap items-start justify-between gap-4 mb-8">
+<div class="flex flex-col gap-2">
+<p class="text-[#111418] dark:text-white text-3xl font-bold leading-tight tracking-tight">Plumbing Issue: Leaky Faucet in Master Bathroom</p>
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Ticket ID: #T-14582 • Created: June 15, 2024</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-orange-100 dark:bg-orange-500/20 px-4">
+<p class="text-orange-600 dark:text-orange-300 text-sm font-medium leading-normal">In Progress</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 flex flex-col gap-8">
+<div>
+<h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight mb-4">Status</h2>
+<div class="flex items-center w-full">
+<div class="flex flex-col items-center relative">
+<div class="rounded-full size-6 bg-primary flex items-center justify-center ring-4 ring-primary/20">
+<span class="material-symbols-outlined text-white !text-base">check</span>
+</div>
+<p class="text-xs text-center mt-2 text-[#617589] dark:text-gray-400">Created</p>
+</div>
+<div class="flex-auto border-t-2 border-primary"></div>
+<div class="flex flex-col items-center relative">
+<div class="rounded-full size-6 bg-primary flex items-center justify-center ring-4 ring-primary/20">
+<span class="material-symbols-outlined text-white !text-base">check</span>
+</div>
+<p class="text-xs text-center mt-2 text-[#617589] dark:text-gray-400">Assigned</p>
+</div>
+<div class="flex-auto border-t-2 border-primary"></div>
+<div class="flex flex-col items-center relative">
+<div class="rounded-full size-6 bg-primary flex items-center justify-center ring-4 ring-primary/20">
+<span class="material-symbols-outlined text-white !text-base !font-bold">autorenew</span>
+</div>
+<p class="text-xs text-center mt-2 font-medium text-primary">In Progress</p>
+</div>
+<div class="flex-auto border-t-2 border-gray-200 dark:border-gray-700"></div>
+<div class="flex flex-col items-center relative">
+<div class="rounded-full size-6 bg-gray-200 dark:bg-gray-700 flex items-center justify-center"></div>
+<p class="text-xs text-center mt-2 text-[#617589] dark:text-gray-400">Resolved</p>
+</div>
+<div class="flex-auto border-t-2 border-gray-200 dark:border-gray-700"></div>
+<div class="flex flex-col items-center relative">
+<div class="rounded-full size-6 bg-gray-200 dark:bg-gray-700 flex items-center justify-center"></div>
+<p class="text-xs text-center mt-2 text-[#617589] dark:text-gray-400">Closed</p>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight mb-4">Summary of Actions Taken</h2>
+<div class="border-l-2 border-gray-200 dark:border-gray-700 pl-6 space-y-6">
+<div class="relative">
+<div class="absolute -left-[33px] top-1.5 size-4 rounded-full bg-primary ring-4 ring-primary/20"></div>
+<p class="text-sm font-medium text-[#111418] dark:text-white">Status changed to In Progress</p>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">by John Doe • June 16, 2024, 2:15 PM</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[33px] top-1.5 size-4 rounded-full bg-primary ring-4 ring-primary/20"></div>
+<p class="text-sm font-medium text-[#111418] dark:text-white">Maintenance visit scheduled</p>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">for June 16, 2024, 2:00 PM</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[33px] top-1.5 size-4 rounded-full bg-primary ring-4 ring-primary/20"></div>
+<p class="text-sm font-medium text-[#111418] dark:text-white">Assigned to Maintenance Team (John Doe)</p>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">by Bldg Admin • June 15, 2024, 9:45 AM</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[33px] top-1.5 size-4 rounded-full bg-primary ring-4 ring-primary/20"></div>
+<p class="text-sm font-medium text-[#111418] dark:text-white">Ticket created by Resident</p>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">by Olivia Chen • June 15, 2024, 9:32 AM</p>
+</div>
+</div>
+</div>
+<div class="pt-6 border-t border-gray-200 dark:border-gray-700">
+<div class="bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-700 rounded-xl p-2">
+<textarea class="w-full bg-transparent border-0 p-2 text-sm text-[#111418] dark:text-gray-200 placeholder:text-gray-400 focus:ring-0 resize-none" placeholder="Add your comment..." rows="3"></textarea>
+<div class="flex justify-between items-center p-2">
+<div class="flex gap-2">
+<button class="flex items-center justify-center size-8 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined !text-xl">attach_file</span>
+</button>
+</div>
+<button class="px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50">Add Comment</button>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-1 space-y-6">
+<div class="bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-xl p-5">
+<h3 class="text-base font-bold text-[#111418] dark:text-white mb-4">Ticket Details</h3>
+<div class="space-y-3 text-sm">
+<div class="flex justify-between">
+<span class="text-[#617589] dark:text-gray-400">Category</span>
+<span class="font-medium">Plumbing</span>
+</div>
+<div class="flex justify-between">
+<span class="text-[#617589] dark:text-gray-400">Assigned To</span>
+<span class="font-medium">John Doe</span>
+</div>
+<div class="flex justify-between">
+<span class="text-[#617589] dark:text-gray-400">Team</span>
+<span class="font-medium">Maintenance</span>
+</div>
+<div class="flex justify-between">
+<span class="text-[#617589] dark:text-gray-400">Priority</span>
+<span class="font-medium">High</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-xl p-5">
+<h3 class="text-base font-bold text-[#111418] dark:text-white mb-4">Attachments</h3>
+<div class="grid grid-cols-3 gap-3">
+<div class="aspect-square bg-cover bg-center rounded-lg" data-alt="Leaky faucet in a modern bathroom" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAilzlhNGwl80h5vLIxkc-zyaKP7b6cDhv9zMKJpJj2rp8YHF-V2rxBsBrnkUK1nIGFzCtu6mIY4KXPjo8EFujhcFzl8PzxNalnI14bKmc1nrGsMp9IxY5UgpbwkpzmcYxWBqp4UnZjzfj0qATLnfOy-jMSj1akG4nD0yWOSeLCU5cDAN4iZtJBM8V3iiUcFPO0YwsKiG45BjW3PptaaCdgXrZcrZMjJQwmDDAN45WeHRs4skXHcdUuQwB4i7bQZ7lDRfctn3XK8uIG')"></div>
+<div class="aspect-square bg-cover bg-center rounded-lg" data-alt="Water dripping from a chrome faucet" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAOnf9PRrbaZcp3zd1GpVQnAufpqZoa6XfyExHTDO6nAy7fXUdU6P_tP4ifIa3MiA9YIgQO2fFSYRhRJiPiSyD7M5tf9YAURpSkJx5_rzIIiy7MocmuYfnpUdJsK2NwFX5sZA-7ZaLR8fGi9loKKGYhJpx-UXOLs03pB7p5sDGpkaXP9ror62RW0_Djxn7fwvR92OXlKt1p1lgIlUBiLm17TzDPkdl_sQ2_7Bq4sQKqJrp2qW5vPEOsWV_ICriWONVI7MNRHBdGTaHt')"></div>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-xl p-5">
+<h3 class="text-base font-bold text-[#111418] dark:text-white mb-4">Actions</h3>
+<button class="w-full px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none">Close Ticket</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

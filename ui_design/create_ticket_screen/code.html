@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smart Condo - Create Ticket</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+              "brand-primary": "#005A9C",
+              "brand-secondary": "#D4AF37",
+              "brand-background": "#F8F9FA",
+              "brand-text-dark": "#212529",
+              "brand-text-light": "#6C757D",
+              "brand-error": "#DC3545",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-brand-background font-display text-brand-text-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root">
+<div class="layout-container flex h-full grow flex-col">
+<main class="flex-1 px-4 py-8 md:px-8 lg:px-12 xl:px-24">
+<div class="mx-auto max-w-6xl">
+<div class="mb-8">
+<p class="text-brand-text-dark text-4xl font-black leading-tight tracking-[-0.033em]">Create a New Ticket</p>
+</div>
+<div class="bg-white rounded-xl shadow-sm p-6 md:p-8">
+<form action="#" method="POST">
+<div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3">
+<div class="space-y-8 lg:col-span-2">
+<h3 class="text-brand-text-dark text-lg font-bold leading-tight tracking-[-0.015em] border-b border-gray-200 pb-3">Ticket Details</h3>
+<div class="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2">
+<div>
+<label class="flex flex-col" for="category">
+<p class="text-brand-text-dark text-base font-medium leading-normal pb-2">Category*</p>
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-brand-text-dark focus:outline-0 focus:ring-2 focus:ring-brand-primary/50 border border-gray-300 bg-white focus:border-brand-primary h-14 placeholder:text-brand-text-light p-[15px] text-base font-normal leading-normal" id="category" name="category">
+<option>Select a category</option>
+<option value="water">Water leak</option>
+<option value="electricity">Electricity</option>
+<option value="cleanliness">Cleanliness</option>
+<option value="noise">Noise</option>
+<option value="other">Others</option>
+</select>
+</label>
+</div>
+<div class="sm:col-span-2">
+<label class="flex flex-col" for="ticket-title">
+<p class="text-brand-text-dark text-base font-medium leading-normal pb-2">Ticket Title*</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-brand-text-dark focus:outline-0 focus:ring-2 focus:ring-brand-primary/50 border border-gray-300 bg-white focus:border-brand-primary h-14 placeholder:text-brand-text-light p-[15px] text-base font-normal leading-normal" id="ticket-title" name="ticket-title" placeholder="e.g., Leaky faucet in kitchen" type="text" value=""/>
+</label>
+<p class="mt-2 text-sm text-brand-error">Title is required.</p>
+</div>
+<div class="sm:col-span-2">
+<label class="flex flex-col" for="description">
+<p class="text-brand-text-dark text-base font-medium leading-normal pb-2">Description*</p>
+<textarea class="form-textarea flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-brand-text-dark focus:outline-0 focus:ring-2 focus:ring-brand-primary/50 border border-gray-300 bg-white focus:border-brand-primary min-h-36 placeholder:text-brand-text-light p-[15px] text-base font-normal leading-normal" id="description" name="description" placeholder="Please provide a detailed description of the issue." rows="5"></textarea>
+</label>
+</div>
+</div>
+<h3 class="text-brand-text-dark text-lg font-bold leading-tight tracking-[-0.015em] border-b border-gray-200 pb-3 pt-4">Location</h3>
+<div class="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-3">
+<div>
+<label class="flex flex-col" for="building">
+<p class="text-brand-text-dark text-base font-medium leading-normal pb-2">Building*</p>
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-brand-text-dark focus:outline-0 focus:ring-2 focus:ring-brand-primary/50 border border-gray-300 bg-white focus:border-brand-primary h-14 placeholder:text-brand-text-light p-[15px] text-base font-normal leading-normal" id="building" name="building">
+<option>Select Building</option>
+<option>Tower A</option>
+<option>Tower B</option>
+</select>
+</label>
+</div>
+<div>
+<label class="flex flex-col" for="floor">
+<p class="text-brand-text-dark text-base font-medium leading-normal pb-2">Floor*</p>
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-brand-text-dark focus:outline-0 focus:ring-2 focus:ring-brand-primary/50 border border-gray-300 bg-white focus:border-brand-primary h-14 placeholder:text-brand-text-light p-[15px] text-base font-normal leading-normal" id="floor" name="floor">
+<option>Select Floor</option>
+<option>1</option>
+<option>2</option>
+</select>
+</label>
+</div>
+<div>
+<label class="flex flex-col" for="unit">
+<p class="text-brand-text-dark text-base font-medium leading-normal pb-2">Unit*</p>
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-brand-text-dark focus:outline-0 focus:ring-2 focus:ring-brand-primary/50 border border-gray-300 bg-white focus:border-brand-primary h-14 placeholder:text-brand-text-light p-[15px] text-base font-normal leading-normal" id="unit" name="unit">
+<option>Select Unit</option>
+<option>101</option>
+<option>102</option>
+</select>
+</label>
+</div>
+<div class="sm:col-span-3">
+<label class="flex flex-col" for="common-area">
+<p class="text-brand-text-dark text-base font-medium leading-normal pb-2">Or Common Area</p>
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-brand-text-dark focus:outline-0 focus:ring-2 focus:ring-brand-primary/50 border border-gray-300 bg-white focus:border-brand-primary h-14 placeholder:text-brand-text-light p-[15px] text-base font-normal leading-normal" id="common-area" name="common-area">
+<option>Select if applicable</option>
+<option>Lobby</option>
+<option>Gym</option>
+<option>Pool</option>
+</select>
+</label>
+</div>
+</div>
+</div>
+<div class="space-y-8 lg:col-span-1">
+<h3 class="text-brand-text-dark text-lg font-bold leading-tight tracking-[-0.015em] border-b border-gray-200 pb-3">Attachments</h3>
+<div>
+<div class="mt-2 flex justify-center rounded-lg border-2 border-dashed border-gray-300 px-6 py-10">
+<div class="text-center">
+<span aria-hidden="true" class="material-symbols-outlined text-5xl text-gray-400">cloud_upload</span>
+<div class="mt-4 flex text-sm leading-6 text-brand-text-light">
+<label class="relative cursor-pointer rounded-md font-semibold text-brand-primary focus-within:outline-none focus-within:ring-2 focus-within:ring-brand-primary focus-within:ring-offset-2 hover:text-brand-primary/80" for="file-upload">
+<span>Upload a file</span>
+<input class="sr-only" id="file-upload" name="file-upload" type="file"/>
+</label>
+<p class="pl-1">or drag and drop</p>
+</div>
+<p class="text-xs leading-5 text-brand-text-light">PNG, JPG, GIF up to 10MB</p>
+</div>
+</div>
+<div class="mt-4 space-y-3">
+<div class="flex items-center justify-between rounded-lg border border-gray-200 p-3">
+<div class="flex items-center gap-3">
+<img alt="Leaky faucet image" class="h-10 w-10 rounded-md object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO2-Qu8o5ToWXob2WprxW18Rq5Oefa0-IFmtoypeiNHL3imXZsfv4tUAK_gYCIkaR1Us4emfrGfTGTMcPiDVmfqR1sveZWi-bwcPvEY9-n9IUrfTzpI_ZIeSpj_7lEa6KhMJN9KQLlBICvJMyEP8OVpTRSaE2A8Ljqp24BuMw4zQS40yuANKfoTneWj02MjrZaZ1FBzLrfSB0mnZGmX1FyKmZ3UB9nfUEQ-QEsUmiBGKS2bfvzyCWpyd6l6ao0H5yyJV2s0iO839Vd"/>
+<div class="text-sm">
+<p class="font-medium text-brand-text-dark">IMG_2023_01.jpg</p>
+<p class="text-brand-text-light">2.4 MB</p>
+</div>
+</div>
+<button class="text-brand-text-light hover:text-brand-error" type="button">
+<span aria-hidden="true" class="material-symbols-outlined text-xl">delete</span>
+<span class="sr-only">Remove file</span>
+</button>
+</div>
+</div>
+</div>
+<h3 class="text-brand-text-dark text-lg font-bold leading-tight tracking-[-0.015em] border-b border-gray-200 pb-3 pt-4">Scheduling (Optional)</h3>
+<div>
+<label class="flex flex-col" for="access-time">
+<p class="text-brand-text-dark text-base font-medium leading-normal pb-2">Preferred Access Time</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-brand-text-dark focus:outline-0 focus:ring-2 focus:ring-brand-primary/50 border border-gray-300 bg-white focus:border-brand-primary h-14 placeholder:text-brand-text-light p-[15px] text-base font-normal leading-normal" id="access-time" name="access-time" type="datetime-local"/>
+</label>
+<p class="mt-2 text-xs text-brand-text-light">This is a preferred time and not a guarantee of service time.</p>
+</div>
+</div>
+</div>
+<div class="mt-12 flex items-center justify-end gap-x-4 border-t border-gray-200 pt-8">
+<button class="rounded-lg px-6 py-3 text-base font-semibold text-brand-text-dark hover:bg-gray-100" type="button">Cancel</button>
+<button class="rounded-lg bg-brand-primary px-8 py-3 text-base font-semibold text-white shadow-sm hover:bg-brand-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary disabled:opacity-50" disabled="" type="submit">Submit Ticket</button>
+</div>
+</form>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smart Condo - Reset Password</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f9fafb",
+              "background-dark": "#101922",
+              "charcoal": "#1f2937",
+              "muted-grey": "#6b7280",
+              "success": "#10b981",
+              "error": "#ef4444"
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col items-center justify-center bg-background-light p-4 group/design-root dark:bg-background-dark overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+<div class="layout-container flex h-full grow flex-col justify-center w-full">
+<div class="flex flex-1 justify-center items-center py-10 md:py-16">
+<div class="layout-content-container flex flex-col w-full max-w-md">
+<!-- Logo -->
+<div class="flex justify-center mb-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-4xl">apartment</span>
+<span class="text-2xl font-bold text-charcoal dark:text-white">Smart Condo</span>
+</div>
+</div>
+<!-- Main Card -->
+<div class="bg-white dark:bg-background-dark dark:border dark:border-gray-700 shadow-lg rounded-xl w-full p-8 md:p-10">
+<!-- Initial State -->
+<div id="form-view">
+<div class="text-center">
+<h1 class="text-charcoal dark:text-white tracking-light text-2xl md:text-3xl font-bold leading-tight pb-2 font-display">Forgot Your Password?</h1>
+<p class="text-muted-grey dark:text-gray-300 text-base font-normal leading-normal pb-8 font-display">No problem. Enter your email address below and we'll send you a link to reset it.</p>
+</div>
+<div class="flex flex-col gap-6">
+<label class="flex flex-col w-full">
+<p class="text-charcoal dark:text-gray-200 text-sm font-medium leading-normal pb-2 font-display">Email Address</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-charcoal dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:border-primary dark:focus:border-primary h-12 placeholder:text-muted-grey p-3 text-base font-normal leading-normal font-display" placeholder="Enter your email" type="email" value=""/>
+</label>
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary font-display">
+<span class="truncate">Send Reset Link</span>
+</button>
+</div>
+<div class="text-center mt-6">
+<a class="text-primary text-sm font-medium hover:underline" href="#">Back to Sign In</a>
+</div>
+</div>
+<!-- Success State (Hidden by default) -->
+<div class="hidden" id="success-view">
+<div class="text-center flex flex-col items-center">
+<div class="flex h-16 w-16 items-center justify-center rounded-full bg-success/10 mb-6">
+<span class="material-symbols-outlined text-success text-4xl">mark_email_read</span>
+</div>
+<h1 class="text-charcoal dark:text-white tracking-light text-2xl md:text-3xl font-bold leading-tight pb-2 font-display">Password Reset Email Sent</h1>
+<p class="text-muted-grey dark:text-gray-300 text-base font-normal leading-normal pb-8 font-display">We've sent an email to <span class="font-medium text-charcoal dark:text-white">your-email@example.com</span>. Please check your inbox and follow the instructions to reset your password.</p>
+<a class="text-primary text-sm font-medium hover:underline" href="#">Back to Sign In</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>
