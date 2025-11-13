@@ -2,137 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Smart Home Landing Page Design System - Light Flat Design
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    /* Light Base Theme */
-    --background: 0 0% 99%;
-    --foreground: 220 10% 15%;
-
-    /* Cards & Surfaces */
-    --card: 0 0% 100%;
-    --card-foreground: 220 10% 15%;
-    --card-soft: 210 20% 98%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 10% 15%;
-
-    /* Brand Colors - Elegant Smart Tech */
-    --primary: 210 50% 55%;
-    --primary-foreground: 0 0% 100%;
-    --primary-soft: 210 50% 95%;
-
-    /* Pastel Accent - Fresh & Modern */
-    --accent: 155 45% 65%;
-    --accent-foreground: 0 0% 100%;
-    --accent-soft: 155 45% 95%;
-
-    /* Navy Blue */
-    --navy: 220 91% 20%;
-    --navy-foreground: 0 0% 100%;
-
-    /* Secondary - Soft Neutrals */
-    --secondary: 220 15% 96%;
-    --secondary-foreground: 220 10% 25%;
-
-    /* Muted Elements */
-    --muted: 220 15% 96%;
-    --muted-foreground: 220 10% 50%;
-
-    /* Interactive Elements */
-    --destructive: 0 70% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    /* Borders & Inputs */
-    --border: 220 15% 90%;
-    --input: 220 15% 96%;
-    --ring: 210 50% 55%;
-
-    /* Design System Tokens */
-    --radius: 12px;
-    --radius-lg: 16px;
-    --radius-sm: 8px;
-
-    /* Spacing System */
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 2rem;
-    --spacing-lg: 4rem;
-    --spacing-xl: 6rem;
-
-    /* Typography Scale */
-    --text-hero: 3.5rem;
-    --text-xl: 2rem;
-    --text-lg: 1.25rem;
-    --text-base: 1rem;
-    --text-sm: 0.875rem;
-
-    /* Shadows - Minimal Flat Design */
-    --shadow-soft: 0 2px 8px hsla(220, 20%, 0%, 0.04);
-    --shadow-medium: 0 4px 16px hsla(220, 20%, 0%, 0.08);
-    --shadow-card: 0 1px 3px hsla(220, 20%, 0%, 0.05);
-
-    /* Animations */
-    --transition-fast: 0.15s ease-out;
-    --transition-smooth: 0.3s ease-out;
-    --transition-slow: 0.5s ease-out;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: #ffffff;
+    --foreground: #333333;
+    --card: #ffffff;
+    --card-foreground: #333333;
+    --popover: #ffffff;
+    --popover-foreground: #333333;
+    --primary: #3b82f6;
+    --primary-foreground: #ffffff;
+    --secondary: #f3f4f6;
+    --secondary-foreground: #4b5563;
+    --muted: #f9fafb;
+    --muted-foreground: #6b7280;
+    --accent: #e0f2fe;
+    --accent-foreground: #1e3a8a;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    --border: #e5e7eb;
+    --input: #e5e7eb;
+    --ring: #3b82f6;
+    --chart-1: #3b82f6;
+    --chart-2: #2563eb;
+    --chart-3: #1d4ed8;
+    --chart-4: #1e40af;
+    --chart-5: #1e3a8a;
+    --sidebar: #f9fafb;
+    --sidebar-foreground: #333333;
+    --sidebar-primary: #3b82f6;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #e0f2fe;
+    --sidebar-accent-foreground: #1e3a8a;
+    --sidebar-border: #e5e7eb;
+    --sidebar-ring: #3b82f6;
+    --font-sans: Inter, sans-serif;
+    --font-serif: Source Serif 4, serif;
+    --font-mono: JetBrains Mono, monospace;
+    --radius: 0.375rem;
+    --shadow-x: 0;
+    --shadow-y: 1px;
+    --shadow-blur: 3px;
+    --shadow-spread: 0px;
+    --shadow-opacity: 0.1;
+    --shadow-color: oklch(0 0 0);
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 2px 4px -1px hsl(0 0% 0% / 0.10);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 4px 6px -1px hsl(0 0% 0% / 0.10);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 8px 10px -1px hsl(0 0% 0% / 0.10);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: #171717;
+    --foreground: #e5e5e5;
+    --card: #262626;
+    --card-foreground: #e5e5e5;
+    --popover: #262626;
+    --popover-foreground: #e5e5e5;
+    --primary: #3b82f6;
+    --primary-foreground: #ffffff;
+    --secondary: #262626;
+    --secondary-foreground: #e5e5e5;
+    --muted: #1f1f1f;
+    --muted-foreground: #a3a3a3;
+    --accent: #1e3a8a;
+    --accent-foreground: #bfdbfe;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    --border: #404040;
+    --input: #404040;
+    --ring: #3b82f6;
+    --chart-1: #60a5fa;
+    --chart-2: #3b82f6;
+    --chart-3: #2563eb;
+    --chart-4: #1d4ed8;
+    --chart-5: #1e40af;
+    --sidebar: #171717;
+    --sidebar-foreground: #e5e5e5;
+    --sidebar-primary: #3b82f6;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #1e3a8a;
+    --sidebar-accent-foreground: #bfdbfe;
+    --sidebar-border: #404040;
+    --sidebar-ring: #3b82f6;
+    --font-sans: Inter, sans-serif;
+    --font-serif: Source Serif 4, serif;
+    --font-mono: JetBrains Mono, monospace;
+    --radius: 0.375rem;
+    --shadow-x: 0;
+    --shadow-y: 1px;
+    --shadow-blur: 3px;
+    --shadow-spread: 0px;
+    --shadow-opacity: 0.1;
+    --shadow-color: oklch(0 0 0);
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 2px 4px -1px hsl(0 0% 0% / 0.10);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 4px 6px -1px hsl(0 0% 0% / 0.10);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 8px 10px -1px hsl(0 0% 0% / 0.10);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
   }
 }
 

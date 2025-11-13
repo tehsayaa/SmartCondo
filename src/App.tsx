@@ -8,6 +8,7 @@ import AppShell from "./components/layout/AppShell";
 
 // Page Imports
 import DashboardPage from "./pages/DashboardPage";
+import { ThemeTest } from "./components/ThemeTest";
 
 // Auth Pages (placeholders for now)
 const SignInPage = () => <div>Sign In Page</div>;
@@ -56,6 +57,7 @@ function App() {
           <Route path="tickets/new" element={<CreateServiceRequestPage />} />
           <Route path="tickets/:id" element={<ServiceRequestDetailPage />} />
           <Route path="ai-chat" element={<AIChatPage />} />
+          <Route path="theme-test" element={<ThemeTest />} />
         </Route>
       </Routes>
     </Router>
