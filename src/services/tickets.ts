@@ -1,3 +1,4 @@
+import { supabase } from "@/lib/supabaseClient";
 import {
   Ticket,
   TicketComment,
@@ -5,146 +6,107 @@ import {
   PaginatedResult,
 } from "@/types";
 
-const mockTickets: Ticket[] = [
-  {
-    id: "T-14582",
-    category: "Plumbing",
-    title: "Plumbing Issue: Leaky Faucet in Master Bathroom",
-    description: "The faucet in the master bathroom has been dripping constantly.",
-    priority: "high",
-    status: "in_progress",
-    building: "Tower A",
-    unitNumber: "12A",
-    residentId: "user-1",
-    residentName: "Olivia Chen",
-    createdAt: "2024-06-15T09:32:00.000Z",
-    updatedAt: "2024-06-16T14:15:00.000Z",
-  },
-  {
-    id: "T-14583",
-    category: "HVAC",
-    title: "AC Unit Not Cooling",
-    description: "The air conditioning unit is running but not cooling the apartment.",
-    priority: "normal",
-    status: "resolved",
-    building: "Tower B",
-    unitNumber: "502",
-    residentId: "user-2",
-    residentName: "Jane Doe",
-    createdAt: "2023-10-24T10:00:00.000Z",
-    updatedAt: "2023-10-24T17:00:00.000Z",
-  },
-  {
-    id: "T-14584",
-    category: "Electrical",
-    title: "Lobby light fixture is flickering",
-    description: "One of the main light fixtures in the lobby is flickering.",
-    priority: "normal",
-    status: "open",
-    building: "Tower A",
-    commonArea: "Lobby",
-    residentId: "user-3",
-    residentName: "Admin",
-    createdAt: "2023-10-27T11:00:00.000Z",
-    updatedAt: "2023-10-27T11:00:00.000Z",
-  },
-];
-
-const mockTimeline: TicketTimelineItem[] = [
-  {
-    id: "tl-1",
-    title: "Status changed to In Progress",
-    actorName: "John Doe",
-    createdAt: "2024-06-16T14:15:00.000Z",
-  },
-  {
-    id: "tl-2",
-    title: "Maintenance visit scheduled",
-    actorName: "Bldg Admin",
-    createdAt: "2024-06-16T14:00:00.000Z",
-    details: "Scheduled for June 16, 2024, 2:00 PM",
-  },
-  {
-    id: "tl-3",
-    title: "Assigned to Maintenance Team (John Doe)",
-    actorName: "Bldg Admin",
-    createdAt: "2024-06-15T09:45:00.000Z",
-  },
-  {
-    id: "tl-4",
-    title: "Ticket created by Resident",
-    actorName: "Olivia Chen",
-    createdAt: "2024-06-15T09:32:00.000Z",
-  },
-];
-
-const mockComments: TicketComment[] = [];
+const toTicket = (data: any): Ticket => ({
+  id: data.id,
+  category: data.category,
+  title: data.title,
+  description: data.description,
+  priority: data.priority,
+  status: data.status,
+  building: data.building,
+  floor: data.floor,
+  unitNumber: data.unit_number,
+  commonArea: data.common_area,
+  residentId: data.resident_id,
+  residentName: data.resident_name,
+  createdAt: data.created_at,
+  updatedAt: data.updated_at,
+});
 
 export const getTickets = async (
   page = 1,
   pageSize = 10
 ): Promise<PaginatedResult<Ticket>> => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      const start = (page - 1) * pageSize;
-      const end = start + pageSize;
-      const data = mockTickets.slice(start, end);
-      resolve({
-        data,
-        page,
-        pageSize,
-        total: mockTickets.length,
-      });
-    }, 500);
-  });
+  const start = (page - 1) * pageSize;
+  const end = start + pageSize - 1;
+
+  const { data, error, count } = await supabase
+    .from("tickets")
+    .select("*", { count: "exact" })
+    .order("created_at", { ascending: false })
+    .range(start, end);
+
+  if (error) {
+    console.error("Error fetching tickets:", error);
+    throw new Error(error.message);
+  }
+
+  return {
+    data: data.map(toTicket),
+    page,
+    pageSize,
+    total: count || 0,
+  };
 };
 
-export const getTicketById = async (
-  id: string
-): Promise<Ticket | undefined> => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(mockTickets.find((t) => t.id === id));
-    }, 300);
-  });
+export const getTicketById = async (id: string): Promise<Ticket | undefined> => {
+  const { data, error } = await supabase
+    .from("tickets")
+    .select("*")
+    .eq("id", id)
+    .single();
+
+  if (error) {
+    console.error(`Error fetching ticket ${id}:`, error);
+    if (error.code === "PGRST116") return undefined;
+    throw new Error(error.message);
+  }
+
+  return data ? toTicket(data) : undefined;
 };
 
+// Timeline and comments are not in the initial schema, so these remain mocks.
 export const getTicketTimeline = async (
   ticketId: string
 ): Promise<TicketTimelineItem[]> => {
   console.log("Fetching timeline for ticket:", ticketId);
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(mockTimeline);
-    }, 300);
-  });
+  return Promise.resolve([]);
 };
 
 export const getTicketComments = async (
   ticketId: string
 ): Promise<TicketComment[]> => {
   console.log("Fetching comments for ticket:", ticketId);
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(mockComments);
-    }, 300);
-  });
+  return Promise.resolve([]);
 };
 
 export const createTicket = async (
   ticketData: Omit<Ticket, "id" | "createdAt" | "updatedAt" | "residentName">
 ): Promise<Ticket> => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      const newTicket: Ticket = {
-        ...ticketData,
-        id: `T-${Math.floor(Math.random() * 100000)}`,
-        residentName: "New User", // Placeholder
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-      };
-      mockTickets.unshift(newTicket);
-      resolve(newTicket);
-    }, 700);
-  });
+  const { data, error } = await supabase
+    .from("tickets")
+    .insert([
+      {
+        category: ticketData.category,
+        title: ticketData.title,
+        description: ticketData.description,
+        priority: ticketData.priority,
+        status: "open",
+        building: ticketData.building,
+        floor: ticketData.floor,
+        unit_number: ticketData.unitNumber,
+        common_area: ticketData.commonArea,
+        resident_id: ticketData.residentId, // This should come from auth user
+        resident_name: "Current User", // Placeholder
+      },
+    ])
+    .select()
+    .single();
+
+  if (error) {
+    console.error("Error creating ticket:", error);
+    throw new Error(error.message);
+  }
+
+  return toTicket(data);
 };
