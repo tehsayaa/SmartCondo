@@ -1,6 +1,6 @@
-# StarterKit
+# Smart Condo Portal
 
-This is a boilerplate code for vibe coding.
+This is the frontend application for the Smart Condo resident and management portal.
 
 ## Tech Stack
 
@@ -11,12 +11,51 @@ This is a boilerplate code for vibe coding.
 - Tailwind CSS
 - Supabase
 
-## How to get Supabase ID
+## Getting Started
 
-To get your Supabase project ID, you can follow these steps:
+Follow these steps to get the project up and running on your local machine.
 
-1.  Go to your Supabase project dashboard.
-2.  In the URL, you will see something like `https://app.supabase.com/project/your-project-id`.
-3.  `your-project-id` is the ID you need.
+### Prerequisites
 
-You can also get it programmatically using the Supabase CLI or API.
+- Node.js (v18 or later)
+- npm
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone <repository-url>
+    cd <repository-directory>
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+### Environment Configuration
+
+1.  **Create an environment file:**
+    Create a new file named `.env` in the root of the project.
+
+2.  **Add your Supabase credentials:**
+    Open the `.env` file and add your Supabase project URL and anon key. You can find these in your Supabase project's API settings.
+
+    ```
+    VITE_SUPABASE_URL=your-supabase-url
+    VITE_SUPABASE_ANON_KEY=your-supabase-anon-key
+    ```
+
+### Running the Application
+
+Once the dependencies are installed and the environment is configured, you can start the development server:
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:8080`.
+
+## Supabase Schema
+
+The database schema is managed via migration files located in the `supabase/migrations` directory. To apply the schema to your Supabase project, you can use the Supabase CLI.
