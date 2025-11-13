@@ -19,6 +19,9 @@ const config = {
 		},
 		extend: {
 			fontFamily: {
+				'sans': ['var(--font-sans)'],
+				'serif': ['var(--font-serif)'],
+				'mono': ['var(--font-mono)'],
 				'inter': ['Inter', 'system-ui', 'sans-serif'],
 			},
 			colors: {
@@ -29,8 +32,7 @@ const config = {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))',
-					soft: 'hsl(var(--primary-soft))'
+					foreground: 'hsl(var(--primary-foreground))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -46,12 +48,7 @@ const config = {
 				},
 				accent: {
 					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))',
-					soft: 'hsl(var(--accent-soft))'
-				},
-				navy: {
-					DEFAULT: 'hsl(var(--navy))',
-					foreground: 'hsl(var(--navy-foreground))'
+					foreground: 'hsl(var(--accent-foreground))'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -59,11 +56,10 @@ const config = {
 				},
 				card: {
 					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))',
-					soft: 'hsl(var(--card-soft))'
+					foreground: 'hsl(var(--card-foreground))'
 				},
 				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
+					DEFAULT: 'hsl(var(--sidebar))',
 					foreground: 'hsl(var(--sidebar-foreground))',
 					primary: 'hsl(var(--sidebar-primary))',
 					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
@@ -71,12 +67,32 @@ const config = {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				chart: {
+					'1': 'hsl(var(--chart-1))',
+					'2': 'hsl(var(--chart-2))',
+					'3': 'hsl(var(--chart-3))',
+					'4': 'hsl(var(--chart-4))',
+					'5': 'hsl(var(--chart-5))'
 				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			spacing: {
+				'normal': 'var(--tracking-normal)'
+			},
+			boxShadow: {
+				'2xs': 'var(--shadow-2xs)',
+				'xs': 'var(--shadow-xs)',
+				'sm': 'var(--shadow-sm)',
+				DEFAULT: 'var(--shadow)',
+				'md': 'var(--shadow-md)',
+				'lg': 'var(--shadow-lg)',
+				'xl': 'var(--shadow-xl)',
+				'2xl': 'var(--shadow-2xl)'
 			},
 			keyframes: {
 				'accordion-down': {
